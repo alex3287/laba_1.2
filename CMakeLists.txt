@@ -10,6 +10,7 @@ set(CMAKE_AUTOMOC ON)
 find_package(Qt5 REQUIRED COMPONENTS
         # список необходимых библиотек
         Core
+        Charts
         # и т.д., например Widgets, Charts
         )
 

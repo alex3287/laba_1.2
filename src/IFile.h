@@ -13,8 +13,8 @@
 //наследуем от QObject чтобы можно было работать со slots и signal
 class IFile: public QObject {
 Q_OBJECT
-public:
-    ~IFile() {};
+//public: TODO создать конструктор
+//    IFile(QString name);
 public slots: //слот отвечающий за обновления размера файла
     virtual void update_size(void) {};
 };

@@ -5,19 +5,24 @@
 #ifndef LABA_1_2_FILE_H
 #define LABA_1_2_FILE_H
 
-#include <QObject>
 #include <QString>
-#include "IFile.h"
+//#include <QObject>
+//#include "IFile.h"
 
-class File: public IFile {
-Q_OBJECT
+class File  {
+//Q_OBJECT
 public:
-    File(QString name);
-    ~File();
+    File(QString f_name) {name = f_name;};
+    ~File(){};
     int newFileSize(void);
     QString getFileName();
-public slots:
-    void update_size(void);
+//    {
+//        return name;
+//    };
+
+
+//public slots:
+//    void update_size(void);
 private:
     QString name;
     int fileSize;

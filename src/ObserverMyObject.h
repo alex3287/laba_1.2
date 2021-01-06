@@ -4,6 +4,7 @@
 
 #ifndef LABA_1_2_OBSERVERMYOBJECT_H
 #define LABA_1_2_OBSERVERMYOBJECT_H
+#include <QFileInfo>
 #include "Observable.h"
 #include "IFile.h"
 
