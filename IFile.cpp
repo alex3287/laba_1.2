@@ -3,6 +3,3 @@
 //
 
 #include "IFile.h"
-
-IFile::IFile(std::string name):name(name) {}
-IFile::~IFile() {cout<<"Good by "<<name<<endl;}

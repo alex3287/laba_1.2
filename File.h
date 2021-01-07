@@ -7,13 +7,15 @@
 
 #include "IFile.h"
 
-class File {
+class File: IFile {
 private:
-    String name;
+    string name;
     // TODO тут добавить fileSize (и это же сделать в IFile)
 public:
-    File(String name);
+    File(string name);
     ~File();
+    void setFileName(string newName);
+    string getFileName();
 };
 
 

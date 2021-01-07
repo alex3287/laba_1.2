@@ -6,16 +6,14 @@
 #define LABA_1_2_IFILE_H
 
 #include <iostream>
-
+// TODO поправить все это в UML диаграмме
+using namespace std;
 class IFile {
-    using namespace std;
-private:
-    String name;
+
 public:
-    IFile(String name);
-    ~IFile();
-
+    virtual ~IFile() {};
+    virtual void setFileName(string name)=0;
+    virtual string getFileName()=0;
 };
-
 
 #endif //LABA_1_2_IFILE_H
