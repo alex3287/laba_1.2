@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.17)
-project(laba_1.2)
+project(lab_1.2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(laba_1.2 main.cpp)
+add_executable(lab_1.2 main.cpp IFile.h IFile.cpp File.h File.cpp Observable.h IObserver.h)
