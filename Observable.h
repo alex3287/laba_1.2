@@ -8,25 +8,26 @@
 
 #include <set>
 #include <vector>
+#include "IObserver.h"
 
-template< class Observer >
+template< class IObserver >
 class Observable {
 public:
     virtual ~Observable() {}
 
     Observable() : m_count(0) {}
 
-    void registerObserver( Observer* observer ) {
+    void registerObserver(IObserver* observer ) {
         if( m_count != 0 ) {
-            m_requests.push_back( ObserverRequest { &Observable< Observer >::registerObserver, observer } );
+            m_requests.push_back( ObserverRequest {&Observable< IObserver >::registerObserver, observer } );
         } else if( observer ) {
             m_observers.insert( observer );
         }
     }
 
-    void unregisterObserver( Observer* observer ) {
+    void unregisterObserver(IObserver* observer ) {
         if( m_count != 0 ) {
-            m_requests.push_back( ObserverRequest { &Observable< Observer >::unregisterObserver, observer } );
+            m_requests.push_back( ObserverRequest {&Observable< IObserver >::unregisterObserver, observer } );
         } else if( observer ) {
             m_observers.erase( observer );
         }
@@ -38,7 +39,7 @@ protected:
 
         ++m_count;
 
-        for( Observer* ptr : m_observers )
+        for( IObserver* ptr : m_observers )
         {
             ( ptr->*f )( args... );
         };
@@ -57,11 +58,11 @@ protected:
 
 private:
     struct ObserverRequest {
-        void ( Observable< Observer >::*operation )( Observer* );
-        Observer* observer;
+        void ( Observable< IObserver >::*operation )(IObserver* );
+        IObserver* observer;
     };
 
-    std::set< Observer* > m_observers;
+    std::set< IObserver* > m_observers;
     std::vector< ObserverRequest > m_requests;
 
     int m_count;

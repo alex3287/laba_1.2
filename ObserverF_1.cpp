@@ -8,6 +8,9 @@ ObserverF_1::~ObserverF_1() {
     cout<<"Good By!!! F_1"<<endl;
 }
 
-const void ObserverF_1::changeName(File *file, string newName) {
+void ObserverF_1::update(string newName) {
     file->setFileName(newName);
+    cout<<"файл изменил свое имя на "<<newName<<endl;
 }
+
+ObserverF_1::ObserverF_1(File *file):file(file) { }

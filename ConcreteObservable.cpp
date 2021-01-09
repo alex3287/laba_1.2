@@ -4,12 +4,22 @@
 
 #include "ConcreteObservable.h"
 
-void ConcreteObservable::checkingCurrentStateFile() {
-    cout<<"check done!"<<endl;
-    cout<<"I have problem here"<<endl;
+
+void ConcreteObservable::notifyObservers() {
+    for (auto obj: observers){
+        obj->update(name);
+    }
+}
+
+void ConcreteObservable::checkingCurrentStateFile(string newName) {
+    name = newName;
     notifyObservers();
 }
 
-void ConcreteObservable::notifyObservers() {
-    cout<<"notify done!"<<endl;
+void ConcreteObservable::unregisterObserver(IObserver *obs) {
+    observers.erase(remove(observers.begin(), observers.end(), obs), observers.end());
+}
+
+void ConcreteObservable::registerObserver(IObserver *obs) {
+    observers.push_back(obs);
 }
