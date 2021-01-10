@@ -3,22 +3,22 @@
 //
 // ПОДПИСЧИК
 
-#ifndef LAB_1_2_OBSERVERF_1_H
-#define LAB_1_2_OBSERVERF_1_H
+#ifndef LAB_1_2_OBSERVER_H
+#define LAB_1_2_OBSERVER_H
 
 #include "IObserver.h"
 #include "Observable.h"
 #include "File.h"
 
-class ObserverF_1: public IObserver {
+class Observer: public IObserver {
 private:
     File *file;
 public:
-    ObserverF_1(File *file);
-    ~ObserverF_1();
+    Observer(File *file);
+    ~Observer();
     string getName();
     void updateName(string newName);
     void updateSize(double newSize);
 };
 
-#endif //LAB_1_2_OBSERVERF_1_H
+#endif //LAB_1_2_OBSERVER_H

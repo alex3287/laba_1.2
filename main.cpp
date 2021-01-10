@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "File.h"
-#include "ObserverF_1.h"
+#include "Observer.h"
 #include "ConcreteObservable.h"
 
 using namespace std;
@@ -26,8 +26,8 @@ int main()
     File B("file_B_v1");
 
 //  Создание двух подписчиков, которые будут следить за разными издателями
-    ObserverF_1 objF1(&A);
-    ObserverF_1 objF2(&B);
+    Observer objF1(&A);
+    Observer objF2(&B);
     split("Начинаем слежку");
 
 //  Начинаем слежку
