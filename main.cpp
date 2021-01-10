@@ -5,7 +5,6 @@
 #include <iostream>
 #include "File.h"
 #include "ObserverF_1.h"
-#include "ObserverF_2.h"
 #include "ConcreteObservable.h"
 
 using namespace std;
