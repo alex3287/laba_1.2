@@ -10,7 +10,6 @@
 #include "Observable.h"
 #include "File.h"
 
-//TODO тут идет в разрез с моей UML диаграммой
 class ObserverF_1: public IObserver {
 private:
     File *file;
