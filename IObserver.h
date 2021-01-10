@@ -5,15 +5,14 @@
 #ifndef LAB_1_2_IOBSERVER_H
 #define LAB_1_2_IOBSERVER_H
 
-#include "IFile.h"
+#include <iostream>
 
 class IObserver {
 public:
     virtual ~IObserver(){};
-    // TODO возможно нужно еще что-то передать??
-//    virtual void update(IFile *file)=0;
-    virtual void update(string newName)=0;
-//    virtual void changeSize(File *file, string newSize)=0;
+    virtual std::string getName()=0;
+    virtual void updateName(std::string newName)=0;
+    virtual void updateSize(double newSize)=0;
 };
 
 

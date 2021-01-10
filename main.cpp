@@ -5,25 +5,28 @@
 #include <iostream>
 #include "File.h"
 #include "ObserverF_1.h"
+#include "ObserverF_2.h"
 #include "ConcreteObservable.h"
 
 using namespace std;
 
 int main()
 {
+//    Создание объектов
     ConcreteObservable superObserver;
     File A("testName_1");
-    cout<<A.getFileName()<<endl;
     ObserverF_1 objF1(&A);
     superObserver.registerObserver(&objF1);
-//    objF1.update(&A, "testName_1_change");
-//    File B("testName_22");
-//    cout<<A.getFileName()<<endl;
 
-
-    superObserver.checkingCurrentStateFile("testName_1_change");
+//    Тестируем наблюдение
+    superObserver.changeFileName("testName_1_change");
+    superObserver.changeFileSize(25);
     superObserver.unregisterObserver(&objF1);
-    superObserver.checkingCurrentStateFile("testName_2_change");
+    superObserver.changeFileName("testName_2_change");
+    superObserver.changeFileSize(344);
+    superObserver.registerObserver(&objF1);
+    superObserver.changeFileName("testName_3_change");
+    cout<<A.getFileSize()<<endl;
     cout<<"\nВывод диструкторов\n"<<endl;
     return 0;
 }

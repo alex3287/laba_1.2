@@ -9,11 +9,12 @@
 // TODO поправить все это в UML диаграмме
 using namespace std;
 class IFile {
-
 public:
     virtual ~IFile() {};
     virtual void setFileName(string name)=0;
     virtual string getFileName()=0;
+    virtual void setFileSize(double size)=0;
+    virtual double getFileSize()=0;
 };
 
 #endif //LABA_1_2_IFILE_H

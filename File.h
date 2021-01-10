@@ -10,12 +10,15 @@
 class File: IFile {
 private:
     string name;
+    double size;
     // TODO тут добавить fileSize (и это же сделать в IFile)
 public:
     File(string name);
     ~File();
     void setFileName(string newName);
     string getFileName();
+    void setFileSize(double newSize) override;
+    double getFileSize() override;
 };
 
 

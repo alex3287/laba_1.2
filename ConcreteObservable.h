@@ -16,11 +16,13 @@ class ConcreteObservable: public Observable<IObserver> {
 private:
     vector<IObserver*> observers;
     string name;
+    double size;
 public:
     void registerObserver(IObserver *obs);
     void unregisterObserver(IObserver *obs);
-    void checkingCurrentStateFile(string newName);
-    void notifyObservers();
+    void changeFileName(string newName);
+    void changeFileSize(double newSize);
+    void notifyObservers(string flag);
 };
 
 

@@ -17,9 +17,9 @@ private:
 public:
     ObserverF_1(File *file);
     ~ObserverF_1();
-//     void update(IFile *file);
-     void update(string newName);
+    string getName();
+    void updateName(string newName);
+    void updateSize(double newSize);
 };
-
 
 #endif //LAB_1_2_OBSERVERF_1_H
