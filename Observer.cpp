@@ -19,6 +19,6 @@ string Observer::getName() {
 }
 
 void Observer::updateSize(double newSize) {
-    cout<<"Файл "<<file->getFileName()<<" изменил совой размер "<<file->getFileSize()<<" и теперь имеет новый размер "<<newSize<<endl;
+    cout<<"Файл "<<file->getFileName()<<" изменил свой размер "<<file->getFileSize()<<" и теперь имеет новый размер "<<newSize<<endl;
     file->setFileSize(newSize);
 }
